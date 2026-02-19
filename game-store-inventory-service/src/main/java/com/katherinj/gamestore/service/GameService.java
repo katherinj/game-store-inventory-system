@@ -40,7 +40,7 @@ public class GameService {
         existing.setPrice(updated.getPrice());
         existing.setQuantity(updated.getQuantity());
 
-        return existing; // transaction will flush
+        return existing;
     }
 
     public void deleteGame(Long id) {
