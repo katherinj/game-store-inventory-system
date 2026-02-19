@@ -1,0 +1,12 @@
+package com.katherinj.gamestore.repository;
+
+import com.katherinj.gamestore.model.Game;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface GameRepository extends JpaRepository<Game, Long> {
+    List<Game> findByStudioContainingIgnoreCase(String studio);
+    List<Game> findByTitleContainingIgnoreCase(String title);
+    List<Game> findByEsrbRatingIgnoreCase(String esrbRating);
+}
