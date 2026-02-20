@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Button, Container } from "@mui/material";
 
 import GamesPage from "./pages/GamesPage";
 import TShirtsPage from "./pages/TShirtsPage";
+import ConsolesPage from "./pages/ConsolesPage";
 
 export default function App() {
   return (
@@ -17,6 +18,10 @@ export default function App() {
           <Button color="inherit" component={Link} to="/tshirts">
             T-Shirts
           </Button>
+
+          <Button color="inherit" component={Link} to="/consoles">
+            Consoles
+          </Button>
         </Toolbar>
       </AppBar>
 
@@ -26,6 +31,7 @@ export default function App() {
           <Route path="/" element={<GamesPage />} />
           <Route path="/games" element={<GamesPage />} />
           <Route path="/tshirts" element={<TShirtsPage />} />
+          <Route path="/consoles" element={<ConsolesPage />} />
         </Routes>
       </Container>
     </BrowserRouter>

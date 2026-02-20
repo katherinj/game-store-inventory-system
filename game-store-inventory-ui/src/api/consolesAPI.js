@@ -1,22 +1,20 @@
-const BASE = "/api/tshirts";
+const BASE = "/api/consoles";
 
 async function handle(res) {
   if (!res.ok) {
     const text = await res.text().catch(() => "");
     throw new Error(text || `Request failed (${res.status})`);
   }
-
-  // 204 No Content
   if (res.status === 204) return null;
   return res.json();
 }
 
-export async function getAllTShirts() {
+export async function getAllConsoles() {
   const res = await fetch(BASE);
   return handle(res);
 }
 
-export async function createTShirt(payload) {
+export async function createConsole(payload) {
   const res = await fetch(BASE, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -25,7 +23,7 @@ export async function createTShirt(payload) {
   return handle(res);
 }
 
-export async function updateTShirt(id, payload) {
+export async function updateConsole(id, payload) {
   const res = await fetch(`${BASE}/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -34,12 +32,13 @@ export async function updateTShirt(id, payload) {
   return handle(res);
 }
 
-export async function deleteTShirt(id) {
+export async function deleteConsole(id) {
   const res = await fetch(`${BASE}/${id}`, { method: "DELETE" });
   return handle(res);
 }
 
-export async function searchTShirts(q) {
+// q can be: { manufacturer: "sony" } OR { model: "ps5" }
+export async function searchConsoles(q) {
   const params = new URLSearchParams(q);
   const res = await fetch(`${BASE}/search?${params.toString()}`);
   return handle(res);
