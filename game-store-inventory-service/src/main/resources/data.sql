@@ -18,3 +18,12 @@ VALUES
     ('Nintendo Switch', 'Nintendo', '4GB', 'NVIDIA Tegra X1', 299.99, 20),
     ('PlayStation 4', 'Sony', '8GB', 'AMD Jaguar', 299.99, 8),
     ('Xbox One S', 'Microsoft', '8GB', 'AMD Jaguar', 249.99, 6);
+
+INSERT INTO tax (state, rate) VALUES
+                                  ('NJ', 0.06625),
+                                  ('NY', 0.08875);
+
+INSERT INTO fee (product_type, fee) VALUES
+                                        ('Game', 1.49),
+                                        ('Console', 14.99),
+                                        ('T-Shirt', 1.98);
