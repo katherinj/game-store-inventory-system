@@ -19,7 +19,7 @@ public class Tax {
     private String state; // "NJ"
 
     @NotNull
-    @Digits(integer = 3, fraction = 4) // ex: 0.06625
+    @Digits(integer = 3, fraction = 4)
     @Column(nullable = false, precision = 7, scale = 5)
     private BigDecimal rate;
 }

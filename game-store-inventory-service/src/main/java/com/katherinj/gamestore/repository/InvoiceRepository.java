@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
     List<Invoice> findByNameContainingIgnoreCase(String name);
+    List<Invoice> findByStateIgnoreCase(String state);
 }

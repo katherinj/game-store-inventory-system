@@ -67,7 +67,6 @@ public class TShirtService {
         return repository.findByDescriptionContainingIgnoreCase(description);
     }
 
-    // Optional: combined search
     public List<TShirt> searchByColorAndSize(String color, String size) {
         return repository.findByColorContainingIgnoreCaseAndSizeIgnoreCase(color, size);
     }
